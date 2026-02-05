@@ -25,11 +25,11 @@ public class ATM_Stimulation_db
     {
         try
         {
-            System.out.print("Enter Holder Name : ");
-            name=sc.nextLine();
-            sc.next();
             System.out.print("Enter Account No : ");
             accno=sc.nextInt();
+            sc.nextLine();
+            System.out.print("Enter Holder Name : ");
+            name=sc.nextLine();
             System.out.print("Enter 4-Digit Pin : ");
             pin=sc.nextInt();
             System.out.print("Enter Opening Balance : ");
@@ -40,6 +40,7 @@ public class ATM_Stimulation_db
             stmt.executeUpdate("insert into account values('"+accno+"','"+pin+"','"+name+"','"+op_bal+"');");
             con.commit();
             System.out.print("\nSign Up Successful...");
+            menu();
         }
         catch(Exception e)
         {
@@ -182,3 +183,4 @@ public class ATM_Stimulation_db
         }
     }
 }
+
